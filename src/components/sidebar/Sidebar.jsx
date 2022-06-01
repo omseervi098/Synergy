@@ -43,12 +43,7 @@ const Sidebar = () => {
               <span>Task</span>
             </li>
           </Link>
-          <Link to="/" style={{ textDecoration: "none" }}>
-            <li>
-              <TaskAltIcon className="icon" />
-              <span>Assigned Task</span>
-            </li>
-          </Link>
+          
           <p className="title">USEFUL</p>
           <Link to="/stats" style={{ textDecoration: "none" }}>
           <li>
