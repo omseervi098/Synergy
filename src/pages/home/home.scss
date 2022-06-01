@@ -1,9 +1,9 @@
 .home {
   display: flex;
-
+  position: relative;
   .homeContainer {
     flex: 6;
-
+    position: relative;
     .widgets,
     .charts {
       display: flex;

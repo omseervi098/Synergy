@@ -10,7 +10,7 @@ import TaskIcon from "@mui/icons-material/Task";
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
 import ListAltIcon from "@mui/icons-material/ListAlt";
 import { Link } from "react-router-dom";
-
+//import PlaylistPlayIcon from '@mui/icons-material/PlaylistPlay';
 const Sidebar = () => {
   return (
     <div className="sidebar">
@@ -33,7 +33,7 @@ const Sidebar = () => {
           <Link to="/users" style={{ textDecoration: "none" }}>
             <li>
               <PersonOutlineIcon className="icon" />
-              <span>Users</span>
+              <span>Staff</span>
             </li>
           </Link>
           <p className="title">TASK</p>
@@ -77,6 +77,7 @@ const Sidebar = () => {
             <ExitToAppIcon className="icon" />
             <span>Logout</span>
           </li>
+          
         </ul>
       </div>
     </div>

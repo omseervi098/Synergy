@@ -1,53 +1,109 @@
 import "./chart.scss";
+import React from "react";
 import {
   AreaChart,
   Area,
   XAxis,
+  YAxis,
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
 
 const data = [
-  { name: "January", Total: 1200 },
-  { name: "February", Total: 2100 },
-  { name: "March", Total: 800 },
-  { name: "April", Total: 1600 },
-  { name: "May", Total: 900 },
-  { name: "June", Total: 1700 },
+  {
+    name: "Mon",
+    "Normal of hrs Lec": 4 ,
+    "Overtime hrs": 1,
+    amt: 2400,
+  },
+  {
+    name: "Tue",
+    "Normal of hrs Lec": 2,
+    "Overtime hrs": 2,
+    amt: 2210,
+  },
+  {
+    name: "Thu",
+    "Normal of hrs Lec": 4,
+    "Overtime hrs": 0,
+    amt: 2290,
+  },
+  {
+    name: "Fri",
+    "Normal of hrs Lec": 3,
+    "Overtime hrs": 2,
+    amt: 2000,
+  },
+  {
+    name: "Sat",
+    "Normal of hrs Lec": 4,
+    "Overtime hrs":1,
+    amt: 2181,
+  },
 ];
 
 const Chart = ({ aspect, title }) => {
   return (
-    <div className="chart">
-      <div className="title">{title}</div>
-      <ResponsiveContainer width="100%" aspect={aspect}>
-        <AreaChart
-          width={730}
-          height={250}
-          data={data}
-          margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
-        >
-          <defs>
-            <linearGradient id="total" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8} />
-              <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
-            </linearGradient>
-          </defs>
-          <XAxis dataKey="name" stroke="gray" />
-          <CartesianGrid strokeDasharray="3 3" className="chartGrid" />
-          <Tooltip />
-          <Area
-            type="monotone"
-            dataKey="Total"
-            stroke="#8884d8"
-            fillOpacity={1}
-            fill="url(#total)"
-          />
-        </AreaChart>
-      </ResponsiveContainer>
-    </div>
-  );
-};
+      <div className="chart">
+        <div className="title">{title}</div>
+        
+          <div style={{ width: "100%" }} aspect={aspect}>
+            <h4>Hrs of Lecture every Week</h4><br/>
+            <ResponsiveContainer width="100%" height={200}  >
+              <AreaChart
+                width={400}
+                height={200}
+                data={data}
+                syncId="anyId"
+                margin={{
+                  top: 10,
+                  right: 30,
+                  left: 0,
+                  bottom: 0,
+                }}
+              >
+                <CartesianGrid strokeDasharray="3 3" className="chartgrid"/>
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Area
+                  type="monotone"
+                  dataKey="Normal of hrs Lec"
+                  stroke="#8884d8"
+                  fill="#8884d8"
+                />
+              </AreaChart>
+            </ResponsiveContainer>
+            <h4>Overtime Hr of every Week</h4><br/>
+            <ResponsiveContainer width="100%" height={200} >
+              <AreaChart
+                width={400}
+                height={200}
+                data={data}
+                syncId="anyId"
+                margin={{
+                  top: 10,
+                  right: 30,
+                  left: 0,
+                  bottom: 0,
+                }}
+              >
+                <CartesianGrid strokeDasharray="3 3" className="chartgrid"/>
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Area
+                  type="monotone"
+                  dataKey="Overtime hrs"
+                  stroke="#82ca9d"
+                  fill="#82ca9d"
+                />
+              </AreaChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
 
-export default Chart;
+    );
+  }
+  export default Chart;

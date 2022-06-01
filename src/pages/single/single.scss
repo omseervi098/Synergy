@@ -1,3 +1,6 @@
+.title{
+  color:rgb(104, 104, 104) !important;
+}
 .single {
   display: flex;
   width: 100%;
@@ -58,6 +61,22 @@
               .itemValue {
                 font-weight: 300;
               }
+            
+            }
+            .Connect,.Messege{
+              background-color:#8a6df1;
+              width:70%;
+              margin:0 auto;
+              padding: 0.2rem 1rem;
+              border-radius: 0.5rem;
+              outline: none;
+              font-size: 1rem;
+              display: block;
+              color:rgb(255, 255, 255);
+            }
+            .Connect:focus,.Messege:focus{
+              background-color: #555;
+              cursor: pointer;
             }
           }
         }

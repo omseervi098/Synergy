@@ -1,25 +1,26 @@
 import "./widget.scss";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
+import AutoStoriesIcon from '@mui/icons-material/AutoStories';
+import StarRateIcon from '@mui/icons-material/StarRate';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import MoreTimeIcon from '@mui/icons-material/MoreTime';
 
 const Widget = ({ type }) => {
   let data;
 
   //temporary
-  const amount = 100;
+  const amount = 59;
   const diff = 20;
 
   switch (type) {
     case "user":
       data = {
-        title: "USERS",
-        isMoney: false,
-        link: "See all users",
+        title: "No. of Lecture Taken",
+        ishour: false,
+        link: "See Details",
+        value:amount,
         icon: (
-          <PersonOutlinedIcon
+          <AutoStoriesIcon
             className="icon"
             style={{
               color: "crimson",
@@ -31,11 +32,12 @@ const Widget = ({ type }) => {
       break;
     case "order":
       data = {
-        title: "ORDERS",
-        isMoney: false,
-        link: "View all orders",
+        title: "Hours Of Lectures",
+        ishour: true,
+        link: "see details",
+        value:amount,
         icon: (
-          <ShoppingCartOutlinedIcon
+          <AccessTimeIcon
             className="icon"
             style={{
               backgroundColor: "rgba(218, 165, 32, 0.2)",
@@ -47,24 +49,27 @@ const Widget = ({ type }) => {
       break;
     case "earning":
       data = {
-        title: "EARNINGS",
-        isMoney: true,
-        link: "View net earnings",
+        title: "Overtime",
+        ishour: true,
+        link: "See details",
+        value:amount-45,
         icon: (
-          <MonetizationOnOutlinedIcon
+          <MoreTimeIcon
             className="icon"
             style={{ backgroundColor: "rgba(0, 128, 0, 0.2)", color: "green" }}
           />
         ),
       };
+      
       break;
     case "balance":
       data = {
-        title: "BALANCE",
-        isMoney: true,
-        link: "See details",
+        title: "Rating",
+        isMoney: false,
+        link: "Calculated based on Student's Feedback",
+        value:4.80,
         icon: (
-          <AccountBalanceWalletOutlinedIcon
+          <StarRateIcon
             className="icon"
             style={{
               backgroundColor: "rgba(128, 0, 128, 0.2)",
@@ -83,7 +88,7 @@ const Widget = ({ type }) => {
       <div className="left">
         <span className="title">{data.title}</span>
         <span className="counter">
-          {data.isMoney && "$"} {amount}
+          {data.value} {data.ishour && "hr"} 
         </span>
         <span className="link">{data.link}</span>
       </div>

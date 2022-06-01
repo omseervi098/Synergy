@@ -3,8 +3,8 @@
   padding:0px 10px ;
   border-right: 0.5px solid rgb(230, 227, 227);
   min-height: 100vh;
-  transition: all 0.2s ease-in-out;
-  background-color: white;
+  
+  background-color: rgb(228, 228, 228);
  
 
   .top {
@@ -57,7 +57,7 @@
         }
 
         span{
-           overflow: hidden;
+          overflow: hidden;
         }
       }
     }
@@ -93,8 +93,9 @@
   flex: 1;
   border-right: 0.5px solid rgb(230, 227, 227);
   min-height: 100vh;
-  background-color: white;
-
+  width:0%;
+  background-color: rgb(241, 223, 223);
+  transition: all 0.3s ease-in-out;
   .top {
     height: 50px;
     display: flex;
@@ -122,7 +123,7 @@
       padding: 0;
 
       .title {
-        font-size: 15px;
+        font-size: 12px;
         font-weight: bold;
         color: #999;
         margin-top: 15px;
@@ -145,7 +146,8 @@
         }
 
         span{
-          overflow:auto;
+          
+          overflow: auto;
             font-size: 15px;
             font-weight: 600;
             color: #888;
@@ -178,5 +180,15 @@
               background-color: darkblue;
           }
       }
+  }
+}
+@media only screen and (max-width: 900px)  {
+  .sidebar{
+    width:6%;
+    position: relative;
+    
+  }
+  .sidebar:hover{
+    width:auto;
   }
 }
