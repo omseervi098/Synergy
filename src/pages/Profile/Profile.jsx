@@ -1,10 +1,10 @@
-import "./single.scss";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
-import Chart from "../../components/chart/Chart";
-
-
-const Single = () => {
+import Chart from "../../components/chart/linechart";
+import Featured from "../../components/featured/Featured";
+import "../single/single.scss";
+import "./profile.scss";
+const Profile = () => {
   return (
     <div className="single">
       <Sidebar />
@@ -37,7 +37,26 @@ const Single = () => {
                   </span>
                 </div>
                 <div className="detailItem">
-                <span className="itemKey">Education:</span>
+                  <span className="itemKey">Summary:</span>
+                  <span className="itemValue">
+                    Humans can evaluate these visual elements in several
+                    situations to find a sense of balance. Humans can evaluate
+                    these visual elements in several situations to find a sense
+                    of balance.
+                  </span>
+                </div>
+                <div className="detailItem">
+                  <span className="itemKey">Education:</span>
+                  <ul>
+                    <li className="itemValue">B.Com from Ski University</li>
+                    <li className="itemValue">
+                      Vivamus elementum semper nisi.
+                    </li>
+                    <li className="itemValue">M.Com from Ski University</li>
+                  </ul>
+                </div>
+                <div className="detailItem">
+                  <span className="itemKey">Experience:</span>
                   <ul>
                     <li className="itemValue">Assistant Prof. Ski Univerity</li>
                     <li className="itemValue">Assistant Prof. at MIT</li>
@@ -45,9 +64,11 @@ const Single = () => {
                   </ul>
                 </div>
                 <div className="detailItem">
-                <span className="itemKey">Subjects:</span>
+                  <span className="itemKey">Subjects:</span>
                   <ul>
-                    <li className="itemValue">Design and Analysis of Algorithm</li>
+                    <li className="itemValue">
+                      Design and Analysis of Algorithm
+                    </li>
                     <li className="itemValue">Data Structure and Algorithm</li>
                   </ul>
                 </div>
@@ -55,19 +76,19 @@ const Single = () => {
                   <span className="itemKey">Country:</span>
                   <span className="itemValue">USA</span>
                 </div>
-                <button className="Connect">Connect</button><br/>
-                <button className="Messege">Messege</button>
               </div>
-
             </div>
           </div>
           <div className="right">
-            <Chart aspect={3 / 1} title="User Spending ( Last 6 Months)" />
+          <Featured/> 
           </div>
+        </div>
+        <div className="top">
+          <Chart title="Rating from date of joining" />
         </div>
       </div>
     </div>
   );
 };
 
-export default Single;
+export default Profile;

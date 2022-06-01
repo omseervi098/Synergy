@@ -50,34 +50,37 @@ const Sidebar = () => {
             </li>
           </Link>
           <p className="title">USEFUL</p>
+          <Link to="/stats" style={{ textDecoration: "none" }}>
           <li>
             <InsertChartIcon className="icon" />
             <span>Stats</span>
           </li>
-          <li>
-            <NotificationsNoneIcon className="icon" />
-            <span>Notifications</span>
-          </li>
+          </Link>
+          
+          <Link to="/request" style={{ textDecoration: "none" }}>
           <li>
             <ListAltIcon className="icon" />
             <span>Request</span>
           </li>
-          <Link to="/" style={{ textDecoration: "none" }}>
+          </Link>
+          <Link to="/calender" style={{ textDecoration: "none" }}>
             <li>
               <CalendarMonthIcon className="icon" />
               <span>Calender</span>
             </li>
           </Link>
           <p className="title">USER</p>
+          <Link to="/profile" style={{ textDecoration: "none" }}>
           <li>
             <AccountCircleOutlinedIcon className="icon" />
             <span>Profile</span>
           </li>
+          </Link>
+          
           <li>
             <ExitToAppIcon className="icon" />
             <span>Logout</span>
           </li>
-          
         </ul>
       </div>
     </div>
