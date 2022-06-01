@@ -2,7 +2,7 @@ import "./single.scss";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import Chart from "../../components/chart/Chart";
-
+import { Button } from "@mui/material";
 
 const Single = () => {
   return (

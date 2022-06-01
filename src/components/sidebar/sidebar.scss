@@ -4,7 +4,7 @@
   border-right: 0.5px solid rgb(230, 227, 227);
   min-height: 100vh;
   
-  background-color: rgb(228, 228, 228);
+  background-color: rgb(255, 252, 252);
  
 
   .top {
@@ -93,9 +93,9 @@
   flex: 1;
   border-right: 0.5px solid rgb(230, 227, 227);
   min-height: 100vh;
-  width:auto;
-  background-color: rgb(241, 223, 223);
-  
+  width:0%;
+  background-color: rgb(255, 252, 252);
+ 
   .top {
     height: 50px;
     display: flex;
@@ -146,8 +146,8 @@
         }
 
         span{
-          
-          display: flex;
+           
+            display: flex;
             font-size: 15px;
             font-weight: 600;
             color: #888;
