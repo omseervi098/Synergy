@@ -7,40 +7,44 @@ import Calender from "./pages/Calender/Calender";
 import Stats from "./pages/Stats/Stats";
 import Request from "./pages/Request/Request";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Profile from "./pages/Profile/Profile"
-import {  userInputs } from "./formSource";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Profile from "./pages/Profile/Profile";
+import { userInputs } from "./formSource";
 import "./style/dark.scss";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
+import Signup from "./pages/Signup/signup";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
-
+  const user = localStorage.getItem("token");
   return (
-    
     <div className={darkMode ? "app dark" : "app"}>
       <BrowserRouter>
         <Routes>
-          <Route path="/">
-            <Route index element={<Home />} />
-            <Route path="login" element={<Login />} />
-            <Route path="users">
+          {user && <Route path="/" exact element={<Home />} />}
+          <Route path="/" element={<Navigate replace to="/login" />} />
+          {user && <Route path="/calender" exact element={<Calender />} />}
+          {user && <Route path="/stats" exact element={<Stats />} />}
+          {user && <Route path="/request"  exact element={<Request />} />}
+          {user && (
+            <Route path="/users">
               <Route index element={<List />} />
               <Route path=":userId" element={<Single />} />
               <Route
                 path="new"
                 element={<New inputs={userInputs} title="Add New User" />}
               />
-            
             </Route>
-            <Route path="calender" element={<Calender/>}/>
-            
-            <Route path="stats" element={<Stats/>}/>
-            <Route path="request" element={<Request/>}/>
-            
-            <Route path="profile" element={<Profile/>}/>
-          </Route>
+          )}
+          {user && <Route path="/profile" element={<Profile />} />}
+          <Route path="/login" exact element={<Login />} />
+          <Route path="/signup" exact element={<Signup />} />
+          
+          <Route path="/calender" element={<Navigate replace to="/login" />} />
+          <Route path="/stats" element={<Navigate replace to="/login" />} />
+          <Route path="/request" element={<Navigate replace to="/login" />} />
+          <Route path="/profile" element={<Navigate replace to="/login" />} />
         </Routes>
       </BrowserRouter>
     </div>
