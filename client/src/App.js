@@ -48,7 +48,7 @@ function App() {
       
             <Route path="/staff">
               <Route index element={<Navigate replace to="/login" />} />
-              <Route path=":userId" element={<Single />} />
+              <Route path=":userId"  element={<Navigate replace to="/login" />} />
               <Route
                 path="new"
                 element={<New inputs={userInputs} title="Add New User" />}

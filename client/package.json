@@ -9,6 +9,7 @@
     "@mui/icons-material": "^5.4.4",
     "@mui/material": "^5.4.4",
     "@mui/x-data-grid": "^5.5.1",
+    "@syncfusion/ej2-data": "^20.1.55",
     "@syncfusion/ej2-react-calendars": "^20.1.58",
     "@syncfusion/ej2-react-schedule": "^20.1.57",
     "@testing-library/jest-dom": "^5.16.2",

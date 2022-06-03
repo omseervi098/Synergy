@@ -15,6 +15,7 @@ const Scheduler = () => {
   const change = (args) => {
     scheduleObj.selectedDate = args.value;
     scheduleObj.dataBind();
+    console.log(scheduleData.every.length)
   };
 
   const onDragStart = (arg) => {

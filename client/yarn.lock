@@ -1820,7 +1820,7 @@
   dependencies:
     "@syncfusion/ej2-file-utils" "~20.1.55"
 
-"@syncfusion/ej2-data@~20.1.55":
+"@syncfusion/ej2-data@^20.1.55", "@syncfusion/ej2-data@~20.1.55":
   "integrity" "sha512-iPFnJOjXlOHTP6EV1Qlk4XSympesryDjOMTIB6uYtuUVrHJM87Zk1Wgat7LPyYSB8olVbmPfnDHgCPEOJ8O5vw=="
   "resolved" "https://registry.npmjs.org/@syncfusion/ej2-data/-/ej2-data-20.1.55.tgz"
   "version" "20.1.55"
