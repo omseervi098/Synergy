@@ -1,3 +1,2 @@
 # Synergy
-### This Project was my college Mini Project.It is admin portal for Professor or Teacher.
-### soon will be adding more feature
+### It is admin portal for Professor and teacher to manage their Lectures and to apply for leave. 
