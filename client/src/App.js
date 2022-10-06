@@ -23,14 +23,14 @@ function App() {
       <BrowserRouter>
         <Routes>
           <>
-            {user && <Route path="/" exact element={<Home />} />}
+            { <Route path="/" exact element={<Home />} />}
 
-            {user && <Route path="/calender" exact element={<Calender />} />}
-            {user && <Route path="/stats" exact element={<Stats />} />}
-            {user && <Route path="/request" exact element={<Request />} />}
+            {<Route path="/calender" exact element={<Calender />} />}
+            { <Route path="/stats" exact element={<Stats />} />}
+            {<Route path="/request" exact element={<Request />} />}
             <Route path="/login" exact element={<Login />} />
             <Route path="/signup" exact element={<Signup />} />
-            {user && <Route path="/staff">
+            { <Route path="/staff">
               <Route index element={<List />} />
               <Route path=":userId" element={<Single />} />
               <Route
@@ -39,7 +39,7 @@ function App() {
               />
             </Route>}
 
-            {user && <Route path="/profile" element={<Profile />} />}
+             <Route path="/profile" element={<Profile />} />
             
             <Route path="/" element={<Navigate replace to="/login" />} />
             <Route path="/calender" element={<Navigate replace to="/login" />} />
