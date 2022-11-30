@@ -23,39 +23,47 @@ function App() {
       <BrowserRouter>
         <Routes>
           <>
-            { <Route path="/" exact element={<Home />} />}
+            {<Route path="/" exact element={<Home />} />}
 
             {<Route path="/calender" exact element={<Calender />} />}
-            { <Route path="/stats" exact element={<Stats />} />}
+            {<Route path="/stats" exact element={<Stats />} />}
             {<Route path="/request" exact element={<Request />} />}
             <Route path="/login" exact element={<Login />} />
             <Route path="/signup" exact element={<Signup />} />
-            { <Route path="/staff">
-              <Route index element={<List />} />
-              <Route path=":userId" element={<Single />} />
-              <Route
-                path="new"
-                element={<New inputs={userInputs} title="Add New User" />}
-              />
-            </Route>}
+            {
+              <Route path="/staff">
+                <Route index element={<List />} />
+                <Route path=":userId" element={<Single />} />
+                <Route
+                  path="new"
+                  element={<New inputs={userInputs} title="Add New User" />}
+                />
+              </Route>
+            }
 
-             <Route path="/profile" element={<Profile />} />
-            
+            <Route path="/profile" element={<Profile />} />
+
             <Route path="/" element={<Navigate replace to="/login" />} />
-            <Route path="/calender" element={<Navigate replace to="/login" />} />
+            <Route
+              path="/calender"
+              element={<Navigate replace to="/login" />}
+            />
             <Route path="/stats" element={<Navigate replace to="/login" />} />
             <Route path="/request" element={<Navigate replace to="/login" />} />
-      
+
             <Route path="/staff">
               <Route index element={<Navigate replace to="/login" />} />
-              <Route path=":userId"  element={<Navigate replace to="/login" />} />
+              <Route
+                path=":userId"
+                element={<Navigate replace to="/login" />}
+              />
               <Route
                 path="new"
                 element={<New inputs={userInputs} title="Add New User" />}
               />
             </Route>
+            <Route path="/profile" element={<Navigate replace to="/login" />} />
           </>
-          <Route path="/profile" element={<Navigate replace to="/login" />} />
         </Routes>
       </BrowserRouter>
     </div>
